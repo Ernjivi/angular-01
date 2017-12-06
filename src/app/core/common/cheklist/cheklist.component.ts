@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  QueryList,
+  ViewChildren,
+  // AfterContentInit,
+  AfterViewInit,
+} from '@angular/core';
+import { CheckComponent } from '../check/check.component';
+import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 interface Check{
   status: boolean;
@@ -12,7 +21,9 @@ interface Check{
   templateUrl: './cheklist.component.html',
   styleUrls: ['./cheklist.component.scss']
 })
-export class CheklistComponent implements OnInit {
+export class CheklistComponent implements OnInit, AfterViewInit {
+
+  @ViewChildren(CheckComponent) checks: QueryList<CheckComponent>;
 
   private checkList: Check[];
 
@@ -26,6 +37,14 @@ export class CheklistComponent implements OnInit {
       { status: false, dueDate: new Date(), text: 'Tarea 4' },
       { status: false, dueDate: new Date(), text: 'Tarea 5' },
     ];
+  }
+
+  ngAfterViewInit(){
+    this.checks.forEach((item: CheckComponent) => item.foo = "Hola");
+  }
+
+  foo(){
+    this.checkList.push({ status: false, dueDate: new Date(), text: 'Tarea 5' });
   }
 
 }
