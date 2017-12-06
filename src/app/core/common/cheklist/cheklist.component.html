@@ -1,15 +1,22 @@
-<div>
-  <input (keyup.enter)="addTask(checkText)" type="text" #checkText required>
-  <button (click)="addTask(checkText)">Add Task</button>
+<div class="row justify-content-center">
+  <div class="col-12">
+      <div class="input-group">
+        <input class="form-control" (keyup.enter)="addTask(checkText)" type="text" #checkText required>
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" (click)="addTask(checkText)">Add Check</button>
+        </span>
+      </div>
+  </div>
 </div>
-<div>
-  <ul>
-    <app-check *ngFor="let check of checkList">
-      <input type="checkbox" [(ngModel)]="check.status">
-      <span class="check-text" [ngClass]="{done: check.status}">
-        {{ check.text }}
-      </span>
-    </app-check>
-  </ul>
-  <button (click)="foo()">Click!</button>
+<div class="row mt-5">
+  <div class="col">
+      <ul class="list-group">
+          <app-check *ngFor="let check of checkList" class="list-group-item">
+            <input type="checkbox" [(ngModel)]="check.status">
+            <span class="check-text" [ngClass]="{done: check.status}">
+              {{ check.text }}
+            </span>
+          </app-check>
+        </ul>
+  </div>
 </div>
