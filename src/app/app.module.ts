@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
 import { NgModule } from '@angular/core';
 
 
@@ -14,7 +15,8 @@ import { CheckComponent } from './core/common/check/check.component';
     CheckComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
