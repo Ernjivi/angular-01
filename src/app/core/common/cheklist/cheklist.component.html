@@ -1,4 +1,8 @@
 <div>
+  <input (keyup.enter)="addTask(checkText)" type="text" #checkText required>
+  <button (click)="addTask(checkText)">Add Task</button>
+</div>
+<div>
   <ul>
     <app-check *ngFor="let check of checkList">
       <input type="checkbox" [(ngModel)]="check.status">

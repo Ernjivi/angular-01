@@ -9,7 +9,7 @@ import {
 import { CheckComponent } from '../check/check.component';
 import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
-interface Check{
+export interface Check{
   status: boolean;
   dueDate: Date;
   text: string;
@@ -21,7 +21,7 @@ interface Check{
   templateUrl: './cheklist.component.html',
   styleUrls: ['./cheklist.component.scss']
 })
-export class CheklistComponent implements OnInit, AfterViewInit {
+export class CheklistComponent implements OnInit {
 
   @ViewChildren(CheckComponent) checks: QueryList<CheckComponent>;
 
@@ -39,12 +39,17 @@ export class CheklistComponent implements OnInit, AfterViewInit {
     ];
   }
 
-  ngAfterViewInit(){
-    this.checks.forEach((item: CheckComponent) => item.foo = "Hola");
-  }
+  // ngAfterViewInit(){
+  //   this.checks.forEach((item: CheckComponent) => item.foo = "Hola");
+  // }
 
-  foo(){
-    this.checkList.push({ status: false, dueDate: new Date(), text: 'Tarea 5' });
+  // foo(){
+  //   this.checkList.push({ status: false, dueDate: new Date(), text: 'Tarea 5' });
+  // }
+
+  addTask(element){
+    this.checkList.push({status: false, dueDate: new Date(), text: element.value});
+    element.value = "";
   }
 
 }
