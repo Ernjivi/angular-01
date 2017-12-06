@@ -5,8 +5,8 @@ import { Routes, RouterModule } from "@angular/router";
 
 
 import { AppComponent } from './app.component';
-import { CheklistComponent } from './core/common/cheklist/cheklist.component';
-import { CheckComponent } from './core/common/check/check.component';
+import { CheklistComponent } from './core/common/checklists/cheklist/cheklist.component';
+import { CheckComponent } from './core/common/checklists/check/check.component';
 import { CardComponent } from './core/common/card/card.component';
 
 const routes: Routes = [

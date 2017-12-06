@@ -4,18 +4,12 @@ import {
   Input,
   QueryList,
   ViewChildren,
-  // AfterContentInit,
   AfterViewInit,
+  AfterContentInit
 } from '@angular/core';
-import { CheckComponent } from '../check/check.component';
-import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
-export interface Check{
-  status: boolean;
-  dueDate: Date;
-  text: string;
-  user?: number;
-}
+import { CheckComponent } from '../check/check.component';
+import { Check } from "../../../../models/check.model";
 
 @Component({
   selector: 'app-checklist',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Check } from "../cheklist/cheklist.component";
+import { Check } from "../../../models/check.model";
 
 interface Card{
   id: number,
