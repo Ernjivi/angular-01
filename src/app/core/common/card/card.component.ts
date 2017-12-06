@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Check } from "../cheklist/cheklist.component";
 
-interface Card{
-  id: number,
-  text: string,
-  status: number,
-  checkList?: Check[]
-}
+import { Check } from "../../../models/check.model";
+import { Card } from "../../../models/card.model";
+
 
 @Component({
   selector: 'app-card',
