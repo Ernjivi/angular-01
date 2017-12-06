@@ -1,6 +1,7 @@
 import {
   Component,
   OnInit,
+  Input,
   QueryList,
   ViewChildren,
   // AfterContentInit,
@@ -24,19 +25,12 @@ export interface Check{
 export class CheklistComponent implements OnInit {
 
   @ViewChildren(CheckComponent) checks: QueryList<CheckComponent>;
-
+  @Input()
   private checkList: Check[];
 
   constructor() { }
 
   ngOnInit() {
-    this.checkList = [
-      { status: false, dueDate: new Date(), text: 'Tarea 1' },
-      { status: false, dueDate: new Date(), text: 'Tarea 2' },
-      { status: false, dueDate: new Date(), text: 'Tarea 3' },
-      { status: false, dueDate: new Date(), text: 'Tarea 4' },
-      { status: false, dueDate: new Date(), text: 'Tarea 5' },
-    ];
   }
 
   // ngAfterViewInit(){

@@ -24,7 +24,6 @@ export class CardComponent implements OnInit {
       { status: false, dueDate: new Date(), text: "Tarea2" },
       { status: false, dueDate: new Date(), text: "Tarea3" },
       { status: false, dueDate: new Date(), text: "Tarea4" },
-      { status: false, dueDate: new Date(), text: "Tarea5" }
     ]
   }
 
