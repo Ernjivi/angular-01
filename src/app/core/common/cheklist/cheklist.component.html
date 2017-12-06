@@ -1,5 +1,11 @@
 <div>
   <ul>
-    <app-check *ngFor="let check of checkList">{{ check | json }}</app-check>
+    <app-check *ngFor="let check of checkList">
+      <input type="checkbox" [(ngModel)]="check.status">
+      <span class="check-text" [ngClass]="{done: check.status}">
+        {{ check.text }}
+      </span>
+    </app-check>
   </ul>
+  <button (click)="foo()">Click!</button>
 </div>
