@@ -1,8 +1,7 @@
-<div>
-  {{ card.text }}
-
-  <div *ngIf="card.checkList">
+<div class="card">
+  <div *ngIf="card.checkList" class="card-body">
+    <h3 class="card-title">{{ card.text }}</h3>
+    <hr>
     <app-checklist [checkList]="card.checkList"></app-checklist>
   </div>
-
 </div>
