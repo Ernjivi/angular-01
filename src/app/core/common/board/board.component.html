@@ -1,46 +1,46 @@
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-2">
             <h1>Board</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-2">
             <h2>Backlog</h2>
             <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="backlog">
                 <app-card *ngFor="let card of backlog">
                 </app-card>
             </div>
         </div>
-        <div class="col">
+        <div class="col-2">
             <h2>Freezer</h2>
             <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="freezer">
                 <app-card *ngFor="let card of freezer">
                 </app-card>
             </div>
         </div>
-        <div class="col">
+        <div class="col-2">
             <h2>ToDo</h2>
             <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="todo">
                 <app-card *ngFor="let card of todo">
                 </app-card>
             </div>
         </div>
-        <div class="col">
+        <div class="col-2">
             <h2>On going</h2>
             <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="onGoing">
                 <app-card *ngFor="let card of onGoing">
                 </app-card>
             </div>
         </div>
-        <div class="col">
+        <div class="col-2">
             <h2>Test</h2>
             <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="test">
                 <app-card *ngFor="let card of test">
                 </app-card>
             </div>
         </div>
-        <div class="col">
+        <div class="col-2">
             <h2>Done</h2>
             <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="done">
                 <app-card *ngFor="let card of done">
