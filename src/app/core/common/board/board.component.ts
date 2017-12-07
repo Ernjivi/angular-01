@@ -11,13 +11,13 @@ import { Card } from "../../../models/card.model";
 })
 export class BoardComponent implements OnInit {
 
-  private cards: Card[];
-  private backlog: Card[];
-  private freezer: Card[];
-  private todo: Card[];
-  private onGoing: Card[];
-  private test: Card[];
-  private done: Card[];
+  private cards: Card[] = [];
+  private backlog: Card[] = [];
+  private freezer: Card[] = [];
+  private todo: Card[] = [];
+  private onGoing: Card[] = [];
+  private test: Card[] = [];
+  private done: Card[] = [];
   private indexes: Array<Card[]> = [
     this.backlog,
     this.freezer,
@@ -52,6 +52,10 @@ export class BoardComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.cards.forEach((card:Card) => {
+      this.indexes[card.status].push(card);
+    });
+    // console.log(this.indexes);
   }
 
   private getData(): void {
