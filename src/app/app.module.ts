@@ -10,6 +10,7 @@ import { CheklistComponent } from './core/common/checklists/cheklist/cheklist.co
 import { CheckComponent } from './core/common/checklists/check/check.component';
 import { CardComponent } from './core/common/card/card.component';
 import { BoardComponent } from './core/common/board/board.component';
+import { CardItemComponent } from './core/common/card-item/card-item.component';
 
 const routes: Routes = [
   { path: '', component: BoardComponent }
@@ -23,6 +24,7 @@ const routes: Routes = [
     CheckComponent,
     CardComponent,
     BoardComponent,
+    CardItemComponent,
   ],
   imports: [
     BrowserModule,

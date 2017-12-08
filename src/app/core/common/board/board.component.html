@@ -35,7 +35,7 @@
         </div>
         <div class="col-2">
             <h2>Test</h2>
-            <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="test">
+            <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="test" data-index="4">
                 <app-card *ngFor="let card of test">
                 </app-card>
             </div>
