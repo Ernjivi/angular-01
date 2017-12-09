@@ -13,7 +13,8 @@ import { BoardComponent } from './core/common/board/board.component';
 import { CardItemComponent } from './core/common/card-item/card-item.component';
 
 const routes: Routes = [
-  { path: '', component: BoardComponent }
+  { path: '', component: BoardComponent },
+  { path: 'card/:id', component: CardComponent }
 ]
 
 
