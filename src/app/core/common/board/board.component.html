@@ -7,44 +7,62 @@
     <div class="row">
         <div class="col-2">
             <h2>Backlog</h2>
-            <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="backlog">
-                <app-card *ngFor="let card of backlog">
-                </app-card>
+            <div 
+                class="drop-zone"
+                [dragula]="'cards'"
+                [dragulaModel]="backlog">
+                <app-card-item [card]="card" *ngFor="let card of backlog" id="card.id">
+                </app-card-item>
             </div>
         </div>
         <div class="col-2">
             <h2>Freezer</h2>
-            <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="freezer">
-                <app-card *ngFor="let card of freezer">
-                </app-card>
+            <div 
+                class="drop-zone"
+                [dragula]="'cards'"
+                [dragulaModel]="freezer">
+                <app-card-item [card]="card" *ngFor="let card of freezer">
+                </app-card-item>
             </div>
         </div>
         <div class="col-2">
             <h2>ToDo</h2>
-            <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="todo">
-                <app-card *ngFor="let card of todo">
-                </app-card>
+            <div 
+                class="drop-zone"
+                [dragula]="'cards'"
+                [dragulaModel]="todo">
+                <app-card-item [card]="card" *ngFor="let card of todo">
+                </app-card-item>
             </div>
         </div>
         <div class="col-2">
             <h2>On going</h2>
-            <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="onGoing">
-                <app-card *ngFor="let card of onGoing">
-                </app-card>
+            <div 
+                class="drop-zone"
+                [dragula]="'cards'"
+                [dragulaModel]="onGoing">
+                <app-card-item [card]="card" *ngFor="let card of onGoing">
+                </app-card-item>
             </div>
         </div>
         <div class="col-2">
             <h2>Test</h2>
-            <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="test" data-index="4">
-                <app-card *ngFor="let card of test">
-                </app-card>
+            <div 
+                class="drop-zone"
+                [dragula]="'cards'"
+                [dragulaModel]="test">
+                <app-card-item [card]="card" *ngFor="let card of test">
+                </app-card-item>
             </div>
         </div>
         <div class="col-2">
             <h2>Done</h2>
-            <div class="drop-zone" [dragula]="'cards'" [dragulaModel]="done">
-                <app-card *ngFor="let card of done">
-                </app-card>
+            <div 
+                class="drop-zone"
+                [dragula]="'cards'"
+                [dragulaModel]="done">
+                <app-card-item [card]="card" *ngFor="let card of done">
+                </app-card-item>
             </div>
         </div>
     </div>
