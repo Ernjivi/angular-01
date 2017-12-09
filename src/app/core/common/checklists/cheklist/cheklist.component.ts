@@ -19,8 +19,8 @@ import { Check } from "../../../../models/check.model";
 export class CheklistComponent implements OnInit {
 
   @ViewChildren(CheckComponent) checks: QueryList<CheckComponent>;
-  @Input()
-  private checkList: Check[];
+  
+  @Input() checkList: Check[];
 
   constructor() { }
 
