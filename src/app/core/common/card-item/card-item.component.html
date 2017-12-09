@@ -1,3 +1,10 @@
-<p>
-  card-item works!
-</p>
+<div class="card">
+  <div *ngIf="card.checkList" class="card-body">
+    <div>
+      <strong>{{ card.text }}</strong>
+    </div>
+    <div>
+      {{ getUndoneChecks() }}/{{ getTotalChecks() }}
+    </div>
+  </div>
+</div>
