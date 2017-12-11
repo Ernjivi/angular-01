@@ -7,63 +7,22 @@
     <div class="row">
         <div class="col-2">
             <h2>Backlog</h2>
-            <div 
-                class="drop-zone"
-                [dragula]="'cards'"
-                [dragulaModel]="backlog">
-                <app-card-item [card]="card" *ngFor="let card of backlog" id="card.id">
-                </app-card-item>
-            </div>
+            
         </div>
         <div class="col-2">
             <h2>Freezer</h2>
-            <div 
-                class="drop-zone"
-                [dragula]="'cards'"
-                [dragulaModel]="freezer">
-                <app-card-item [card]="card" *ngFor="let card of freezer">
-                </app-card-item>
-            </div>
         </div>
         <div class="col-2">
             <h2>ToDo</h2>
-            <div 
-                class="drop-zone"
-                [dragula]="'cards'"
-                [dragulaModel]="todo">
-                <app-card-item [card]="card" *ngFor="let card of todo">
-                </app-card-item>
-            </div>
         </div>
         <div class="col-2">
             <h2>On going</h2>
-            <div 
-                class="drop-zone"
-                [dragula]="'cards'"
-                [dragulaModel]="onGoing">
-                <app-card-item [card]="card" *ngFor="let card of onGoing">
-                </app-card-item>
-            </div>
         </div>
         <div class="col-2">
             <h2>Test</h2>
-            <div 
-                class="drop-zone"
-                [dragula]="'cards'"
-                [dragulaModel]="test">
-                <app-card-item [card]="card" *ngFor="let card of test">
-                </app-card-item>
-            </div>
         </div>
         <div class="col-2">
             <h2>Done</h2>
-            <div 
-                class="drop-zone"
-                [dragula]="'cards'"
-                [dragulaModel]="done">
-                <app-card-item [card]="card" *ngFor="let card of done">
-                </app-card-item>
-            </div>
         </div>
     </div>
 </div>
