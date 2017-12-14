@@ -1,28 +1,83 @@
 <div class="container">
-    <div class="row">
-        <div class="col-2">
-            <h1>Board</h1>
-        </div>
+  <div class="row">
+    <div class="col-2">
+      <h1>Board</h1>
     </div>
-    <div class="row">
-        <div class="col-2">
-            <h2>Backlog</h2>
-            
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <h2>Backlog</h2>
+      <div dnd-droppable class="drop-zone">
+        <div *ngFor="let card of backlog" dnd-draggable [dragEnabled]="true">
+          {{ card.text }}
         </div>
-        <div class="col-2">
-            <h2>Freezer</h2>
-        </div>
-        <div class="col-2">
-            <h2>ToDo</h2>
-        </div>
-        <div class="col-2">
-            <h2>On going</h2>
-        </div>
-        <div class="col-2">
-            <h2>Test</h2>
-        </div>
-        <div class="col-2">
-            <h2>Done</h2>
-        </div>
+      </div>
     </div>
+    <div class="col-2">
+      <h2>Freezer</h2>
+      <div dnd-droppable class="drop-zone">
+        <div *ngFor="let card of freezer" dnd-draggable [dragEnabled]="true">
+          {{ card.text }}
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <h2>ToDo</h2>
+      <div dnd-droppable class="drop-zone">
+        <div *ngFor="let card of toDo" dnd-draggable [dragEnabled]="true">
+          {{ card.text }}
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <h2>On going</h2>
+      <div dnd-droppable class="drop-zone">
+        <div *ngFor="let card of onGoing" dnd-draggable [dragEnabled]="true">
+          {{ card.text }}
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <h2>Test</h2>
+      <div dnd-droppable class="drop-zone">
+        <div *ngFor="let card of test" dnd-draggable [dragEnabled]="true">
+          {{ card.text }}
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <h2>Done</h2>
+      <div dnd-droppable class="drop-zone">
+        <div *ngFor="let card of done" dnd-draggable [dragEnabled]="true">
+          {{ card.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <h4>Simple Drag-and-Drop</h4>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="panel panel-success">
+        <div class="panel-heading">Available to drag</div>
+        <div class="panel-body">
+          <div class="panel panel-default" dnd-draggable [dragEnabled]="true">
+            <div class="panel-body">
+              <div>Drag Me</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div dnd-droppable class="drop-zone" class="panel panel-info" (onDropSuccess)="simpleDrop=$event">
+        <div class="panel-heading">Place to drop</div>
+        <div class="panel-body">
+          <div *ngIf="simpleDrop">Item was dropped here</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

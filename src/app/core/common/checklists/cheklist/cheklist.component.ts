@@ -36,7 +36,7 @@ export class CheklistComponent implements OnInit {
   // }
 
   addTask(element){
-    this.checkList.push({status: false, dueDate: new Date(), text: element.value});
+    this.checkList.push({status: false, text: element.value});
     element.value = "";
   }
 

@@ -3,6 +3,8 @@ import { FormsModule } from "@angular/forms";
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
 
+import { DndModule } from "ng2-dnd";
+
 import { AppComponent } from './app.component';
 import { CheklistComponent } from './core/common/checklists/cheklist/cheklist.component';
 import { CheckComponent } from './core/common/checklists/check/check.component';
@@ -29,6 +31,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    DndModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
