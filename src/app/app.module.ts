@@ -2,11 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { DndModule } from "ng2-dnd";
 
 import { AuthService } from "./services/auth.service";
+import { AuthGuard } from "./guards/auth.guard";
+import { AuthInterceptor } from "./interceptors/auth.service";
 
 import { AppComponent } from './app.component';
 import { CheklistComponent } from './core/common/checklists/cheklist/cheklist.component';
@@ -17,7 +19,7 @@ import { CardItemComponent } from './core/common/card-item/card-item.component';
 import { LoginComponent } from './core/auth/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: BoardComponent },
+  { path: '', component: BoardComponent, canActivate: [AuthGuard] },
   { path: 'card/:id', component: CardComponent },
   { path: 'login', component: LoginComponent },
 ]
@@ -40,7 +42,15 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     DndModule.forRoot(),
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
